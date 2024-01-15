@@ -3,16 +3,16 @@ Kubernetes, often abbreviated as K8s, is an open-source container orchestration 
 
 ## Key Concepts
 
-#### Containerized Applications
+### Containerized Applications
 Modern applications are often packaged into containers. Containers encapsulate an application and its dependencies, ensuring consistent and reliable execution across different environments.
 
-#### Orchestration
+### Orchestration
 Kubernetes is great at organizing and controlling many parts of your app. It smartly figures out where to put them, how many to have, and takes care of their lifecycle smoothly.
 
-#### Scaling
+### Scaling
 With Kubernetes, scaling your application becomes a breeze. It can automatically deploy more container instances to handle increased traffic and scale down when demand decreases.
 
-#### Management
+### Management
 Simplify the management of your containerized applications with Kubernetes. It takes care of crucial tasks like load balancing, rolling updates, and fault tolerance, ensuring reliability and efficiency.
 
 ## Why Kubernetes?
@@ -32,14 +32,14 @@ For detailed instructions, refer to the [official Kubernetes documentation](http
 
 ## Installing Docker on MacBook Pro with Apple Silicon Chip
 
-#### Overview
+### Overview
 Docker is a platform for developing, shipping, and running applications in containers. This guide provides step-by-step instructions on how to install Docker on a MacBook Pro with Apple Silicon (chip).
 
-#### Prerequisites
+### Prerequisites
 - MacBook Pro with Apple Silicon ( chip)
 - macOS 11.3 or later
 
-### Installation Steps
+## Installation Steps
 
 1. **Download Docker Desktop for Mac (Apple Silicon):**
    Visit the [official Docker website](https://www.docker.com/products/docker-desktop) and download the Docker Desktop for Mac (Apple Silicon) package.
