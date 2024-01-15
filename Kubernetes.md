@@ -120,7 +120,6 @@ minikube status
 
 ```
 
-# Kubernetes Architecture
 ## Master Node
 In Kubernetes, a master node is like the brain of the whole system. It manages and oversees the entire cluster of computers (nodes) that work together to run and deploy applications.
 
@@ -143,30 +142,23 @@ So, you can think of the master node as the central coordinator that makes sure 
 - **etcd:** A distributed key-value store that holds the cluster's configuration data.
 
 
-### Kubernetes Worker Node Overview
+## Kubernetes Worker Node
 
 In a Kubernetes cluster, the worker node plays a crucial role in executing and managing containerized applications. This document provides an overview of the responsibilities and functions performed by a Kubernetes worker node.
 
-## Worker Node Responsibilities
-
+### Worker Node Responsibilities
 ##### Running Containers
 Worker nodes host containers, which are lightweight and portable units encapsulating applications and their dependencies. These containers execute the actual workloads or applications.
-
 #### Kubelet
 The Kubelet is an agent running on each worker node. Its primary responsibility is to ensure that containers are running within a Pod, which is the smallest deployable unit in Kubernetes. The Kubelet communicates with the master node to receive instructions on which containers to run.
-
 #### Container Runtime
 Worker nodes utilize a container runtime (e.g., Docker or containerd) to start, stop, and manage containers based on instructions received from the Kubelet.
-
 #### Networking
 Worker nodes manage networking for containers. They facilitate communication between containers within the same Pod and ensure that containers on different nodes can communicate effectively.
-
 #### Node Status Reporting
 Worker nodes report their status and resource utilization back to the master node. This information is crucial for the master node to make informed decisions about scheduling new workloads across the cluster.
-
 #### Handling Pods
 Worker nodes execute and manage Pods, which are groups of one or more containers that share the same network namespace and storage. Pods are scheduled together on the same node, contributing to efficient resource utilization.
-
 #### Worker Node in Simple Terms
 In simple terms, a worker node acts as the muscle of the Kubernetes cluster, responsible for running containerized applications. It ensures the proper execution of tasks assigned by the master node. The master node, on the other hand, coordinates and manages the entire cluster, working together with worker nodes to provide a scalable and resilient environment for deploying and managing containerized applications.
 
@@ -178,7 +170,7 @@ Together, the master and worker nodes form a cohesive Kubernetes cluster, orches
 - **Container Runtime:** Responsible for running containers, such as Docker or containerd.
 - **Kube Proxy:** Maintains network rules on the worker nodes.
 
-# Kubernetes Basic Objects Overview
+## Kubernetes Basic Objects
 This document provides a brief overview of fundamental Kubernetes objects that are essential for deploying and managing applications within a Kubernetes cluster.
 
 ## Pods
