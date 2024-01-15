@@ -3,20 +3,16 @@ Kubernetes, often abbreviated as K8s, is an open-source container orchestration 
 
 ## Key Concepts
 
-### Containerized Applications
-
+#### Containerized Applications
 Modern applications are often packaged into containers. Containers encapsulate an application and its dependencies, ensuring consistent and reliable execution across different environments.
 
-### Orchestration
+#### Orchestration
+Kubernetes is great at organizing and controlling many parts of your app. It smartly figures out where to put them, how many to have, and takes care of their lifecycle smoothly.
 
-Kubernetes excels at orchestrating multiple containers of your application. It intelligently decides where to deploy them, how to scale them, and manages their lifecycle efficiently.
-
-### Scaling
-
+#### Scaling
 With Kubernetes, scaling your application becomes a breeze. It can automatically deploy more container instances to handle increased traffic and scale down when demand decreases.
 
-### Management
-
+#### Management
 Simplify the management of your containerized applications with Kubernetes. It takes care of crucial tasks like load balancing, rolling updates, and fault tolerance, ensuring reliability and efficiency.
 
 ## Why Kubernetes?
@@ -34,19 +30,18 @@ To start using Kubernetes, follow these steps:
 
 For detailed instructions, refer to the [official Kubernetes documentation](https://kubernetes.io/docs/)
 
-# Installing Docker on MacBook Pro with Apple Silicon Chip
+## Installing Docker on MacBook Pro with Apple Silicon Chip
 
-## Overview
+#### Overview
 Docker is a platform for developing, shipping, and running applications in containers. This guide provides step-by-step instructions on how to install Docker on a MacBook Pro with Apple Silicon (chip).
 
-## Prerequisites
+#### Prerequisites
 - MacBook Pro with Apple Silicon ( chip)
 - macOS 11.3 or later
 
-## Installation Steps
+### Installation Steps
 
 1. **Download Docker Desktop for Mac (Apple Silicon):**
-
    Visit the [official Docker website](https://www.docker.com/products/docker-desktop) and download the Docker Desktop for Mac (Apple Silicon) package.
 
 2. **Install Docker Desktop:**
@@ -1167,3 +1162,38 @@ ConfigMap data is in plain text, while Secret data is base64 encoded.
 Use kubectl get configmap and kubectl get secret to view them.
 Access data in pods using environment variables or mounted volumes.
 Exercise caution with Secrets due to their sensitive nature.
+
+
+## Jobs
+```yaml
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: testjob
+spec:
+  template:
+    metadata:
+      name: testjob
+    spec:
+      containers:
+      - name: counter
+        image: centos:7
+        command: ["bin/bash", "-c", "echo Technical-Guftgu; sleep 5"]
+      restartPolicy: Never
+--------------
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: testjob
+spec:
+  parallelism: 5                           # Runs for pods in parallel
+  activeDeadlineSeconds: 10  # Timesout after 30 sec
+  template:
+    metadata:
+      name: testjob
+    spec:
+      containers:
+      - name: counter
+        image: centos:7
+        command: ["bin/bash", "-c", "echo Technical-Guftgu; sleep 20"]
+      restartPolicy: Never```
