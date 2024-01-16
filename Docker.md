@@ -61,3 +61,57 @@ sudo docker tag todoreact:1.0 rajnikant98/todoreact:1.0
 
 
 docker push rajnikant98/todoreact:1.0
+
+## An overview of key Dockerfile instructions for building Docker images.
+### 1 FROM:
+This sets the base image for your Docker image. It's like specifying the operating system you want to use as a starting point.
+
+### 2 RUN:
+The RUN instruction is used to execute commands inside the Docker image. It can be used to install packages, update software, or perform any other command-line operations.
+
+### 3 MAINTAINER:
+Note: MAINTAINER is deprecated, and LABEL is commonly used instead. The LABEL instruction can include information about the maintainer, version, or any other metadata.
+
+### 4 COPY and ADD:
+These instructions are used to copy files or directories from the host machine into the Docker image. The primary difference is that ADD can also handle URLs and extract compressed files, while COPY is simpler and more explicit.
+
+### 5 EXPOSE:
+This instruction informs Docker that the container will listen on the specified network ports at runtime. It doesn't actually publish the ports; it's more of a documentation feature.
+
+### 6 WORKDIR:
+It sets the working directory for any subsequent RUN, CMD, ENTRYPOINT, COPY, and ADD instructions in the Dockerfile.
+
+### 7 CMD:
+This instruction provides default command and/or parameters for the container. It can be overridden when running the container.
+
+
+### 8 ENTRYPOINT:
+Similar to CMD, but the main difference is that ENTRYPOINT specifies the command to run as an executable, and CMD provides default arguments for that command.
+
+### 9 ENV:
+It sets environment variables in the Docker image. These variables can be used during the build process and will be available when the container is running.
+
+### In a simple example, a Dockerfile might look like this:
+
+```dockerfile
+# Use an official Python runtime as a base image
+FROM python:3.8
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the current directory contents into the container at /app
+COPY . /app
+
+# Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Make port 80 available to the world outside this container
+EXPOSE 80
+
+# Define environment variable
+ENV NAME World
+
+# Run app.py when the container launches
+CMD ["python", "app.py"]
+```

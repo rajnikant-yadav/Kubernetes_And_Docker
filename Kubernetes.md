@@ -188,9 +188,9 @@ spec:
     - name: mycontainer
       image: nginx:latest
 ```
-**apiVersion:** Specifies the API version for this Kubernetes object.
-**kind:** Specifies the type of object, in this case, a Pod.
-**metadata:** Contains information like the name of the Pod.
+**apiVersion:** Specifies the API version for this Kubernetes object.<br>
+**kind:** Specifies the type of object, in this case, a Pod.<br>
+**metadata:** Contains information like the name of the Pod.<br>
 **spec:** Defines the specification for the Pod, including the containers it should run.
 <br>
 In this example, a Pod named "mypod" is defined, running a single container based on the latest nginx image.
@@ -226,8 +226,7 @@ This illustrates the concept of a multi-container pod where each container perfo
 
 ### Step 2: Create the Pod
 Use the following command to create the pod:
-```bash
-Copy code
+```yaml
 kubectl apply -f multi-container-pod.yaml
 This command instructs Kubernetes to create the pod based on the specifications in the YAML file.
 
