@@ -62,6 +62,7 @@ sudo docker tag todoreact:1.0 rajnikant98/todoreact:1.0
 
 docker push rajnikant98/todoreact:1.0
 
+docker run -d --env-file=local.env --name=meera -p 9000:80 meera
 ## An overview of key Dockerfile instructions for building Docker images.
 ### 1 FROM:
 This sets the base image for your Docker image. It's like specifying the operating system you want to use as a starting point.
