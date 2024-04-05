@@ -1,0 +1,2 @@
+## Pods
+A **Pod** is the smallest deployable unit in Kubernetes, representing one or more containers that share the same network namespace and storage. Pods are the basic building blocks for running applications.
