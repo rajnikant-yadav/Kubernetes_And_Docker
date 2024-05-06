@@ -37,3 +37,20 @@ jobs:
         uses: actions/checkout@v2
       # Add more steps for testing
 ```
+
+## Step
+Every action you take within a job is a step. Steps are the small actions that make up each job. For example, running a command or executing a script are steps.
+
+```yaml
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Build project
+        run: |
+          npm install
+          npm run build
+```
