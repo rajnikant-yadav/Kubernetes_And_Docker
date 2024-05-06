@@ -54,3 +54,23 @@ jobs:
           npm install
           npm run build
 ```
+
+## Action
+Actions are pre-made tasks you can plug into your workflow. For instance, sending a notification or deploying your code can be done using actions.
+
+```yaml
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Deploy to production
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+```
+- name: Checkout code: This line specifies the first step in the job and gives it a name, "Checkout code". This step is responsible for checking out (or fetching) the repository's code into the runner environment where the workflow will run.
+uses: actions/checkout@v2: This line defines the action to be executed in the "Checkout code" step. It specifies an action called "checkout" provided by GitHub. The @v2 indicates that it's using version 2 of this action.
+- name: Build project: This line specifies the second step in the job and names it "Build project". This step will be responsible for building the project's code.
+run: | npm install npm run build: This line defines what the "Build project" step should do. The run keyword indicates that the following lines are commands to be executed. The | symbol indicates that multiple commands will be run as part of this step. Here, it first runs npm install, which installs project dependencies, and then it runs npm run build, which typically builds the project's code. This assumes the project is using npm (Node Package Manager) and follows the convention of running npm run build to build the project.
