@@ -74,3 +74,19 @@ jobs:
 uses: actions/checkout@v2: This line defines the action to be executed in the "Checkout code" step. It specifies an action called "checkout" provided by GitHub. The @v2 indicates that it's using version 2 of this action.
 - name: Build project: This line specifies the second step in the job and names it "Build project". This step will be responsible for building the project's code.
 run: | npm install npm run build: This line defines what the "Build project" step should do. The run keyword indicates that the following lines are commands to be executed. The | symbol indicates that multiple commands will be run as part of this step. Here, it first runs npm install, which installs project dependencies, and then it runs npm run build, which typically builds the project's code. This assumes the project is using npm (Node Package Manager) and follows the convention of running npm run build to build the project.
+
+
+## Runner
+The runner is the environment where your workflow tasks and actions run. GitHub provides these runners, but you can also use your own.
+
+## Event
+Events trigger your workflow to start running. For example, someone pushing code changes or commenting on an issue can trigger your workflow.
+
+```yaml
+on:
+  push:
+    branches:
+      - main
+  issue_comment:
+    types: [created, edited]
+```
